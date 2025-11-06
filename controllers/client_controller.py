@@ -41,10 +41,13 @@ class ClientController(Controller):
     def add_client(self, client: Client):
         """
         Agrega un cliente nuevo a la lista de clientes.
+        Si el documento ya existe, lanza una excepción.
         Entradas: client (objeto Client)
         Salidas: Ninguna
         Pertinencia: Permite registrar nuevos clientes en el sistema.
         """
+        if self.get(client.document):
+            raise Exception(f"❌ Ya existe un cliente con documento {client.document}")
         self.add(client)
 
     def add_vehicle_to_client(self, document, vehicle):
@@ -73,21 +76,22 @@ class ClientController(Controller):
     def delete_client(self, document):
         """
         Elimina un cliente solo si no tiene servicios activos en sus vehículos.
+        Si el cliente no existe, lanza una excepción.
         Entradas: document (str, documento del cliente)
         Salidas: bool (True si se eliminó, False si tiene servicios activos o no existe)
         Pertinencia: Permite mantener la integridad del sistema evitando eliminar clientes con servicios pendientes.
         """
         node = self.get(document)
         if not node:
-            return False
+            raise Exception(f"❌ No existe cliente con documento {document}")
 
         client = node.data
         temp_vehicle = client.vehicles.first()
         while temp_vehicle:
             vehicle = temp_vehicle.data
             if not vehicle.services.is_empty():
-                print(f"❌ No se puede eliminar al cliente {client.name}: tiene servicios activos.")
-                return False
+                raise Exception(f"❌ No se puede eliminar al cliente {client.name}: tiene servicios activos.")
+
             temp_vehicle = temp_vehicle.next
 
         self._items.remove(node)
@@ -144,4 +148,4 @@ class ClientController(Controller):
             print(f"✅ Reporte generado correctamente en '{file_name}'")
 
         except Exception as e:
-            print(f"❌ Error al generar el reporte: {e}")
+            raise Exception(f"❌ Error al generar el reporte: {e}")

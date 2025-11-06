@@ -179,4 +179,127 @@ if __name__ == "__main__":
     else:
         print("⚠️ No hay servicios para probar el ordenamiento.")
 
+    print("\n================ PRUEBAS DE INSERCIÓN DE CLIENTES ================")
+    client_controller = ClientController()
+    try:
+        cliente1 = Client("Juan Perez", "123455", "3001234567", "juan@mail.com", "Calle 1")
+        client_controller.add_client(cliente1)
+        print("✅ Cliente insertado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al insertar cliente válido: {e}")
+    try:
+        cliente_repetido = Client("Ana Torres", "123455", "3007654321", "ana@mail.com", "Calle 2")
+        client_controller.add_client(cliente_repetido)
+        print("❌ Cliente repetido insertado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado por documento repetido: {e}")
+
+    print("\n================ PRUEBAS DE INSERCIÓN DE VEHÍCULOS ================")
+    vehicle_controller = VehicleController()
+    try:
+        cliente2 = Client("Isabella Diaz", "1025646344", "3206686822", "isa_diaza@gmail.com", "Carrera 56 #43-12")
+        client_controller.add_client(cliente2)
+        vehiculo1 = Vehicle(cliente2, "ABC-123", "Toyota", "Corolla", 2020)
+        vehicle_controller.add_vehicle(vehiculo1, client_controller)
+        print("✅ Vehículo insertado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al insertar vehículo válido: {e}")
+    try:
+        cliente3 = Client("Miguel Gomez", "67890", "3109876543", "migue@mail.com", "Calle 3")
+        client_controller.add_client(cliente3)
+        vehiculo_placa_mal = Vehicle(cliente3, "AB123", "Mazda", "3", 2021)
+        vehicle_controller.add_vehicle(vehiculo_placa_mal, client_controller)
+        print("❌ Vehículo con placa inválida insertado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado por placa inválida: {e}")
+    try:
+        vehiculo_sin_cliente = Vehicle(None, "XYZ-789", "Renault", "Logan", 2019)
+        vehicle_controller.add_vehicle(vehiculo_sin_cliente, client_controller)
+        print("❌ Vehículo sin cliente insertado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado por cliente nulo: {e}")
+
+    print("\n================ PRUEBAS DE INSERCIÓN DE SERVICIOS ================")
+    service_controller = ServiceController()
+    try:
+        servicio1 = Service("Mantenimiento", 150000, datetime(2025, 11, 5), "Cambio de aceite")
+        service_controller.add_service(servicio1)
+        print("✅ Servicio insertado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al insertar servicio válido: {e}")
+    try:
+        servicio_precio_neg = Service("Reparación", -50000, datetime(2025, 11, 5), "Cambio de frenos")
+        service_controller.add_service(servicio_precio_neg)
+        print("❌ Servicio con precio negativo insertado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado por precio negativo: {e}")
+
+    print("\n================ PRUEBAS DE BÚSQUEDA ================")
+    cliente_encontrado = client_controller.get_client("123455")
+    print("✅ Cliente encontrado:" if cliente_encontrado else "❌ Cliente no encontrado.")
+    cliente_no_encontrado = client_controller.get_client("99999")
+    print(
+        "❌ Cliente encontrado (debería fallar)." if cliente_no_encontrado else "✅ Cliente no encontrado como se esperaba.")
+    vehiculo_encontrado = vehicle_controller.get_vehicle("ABC-123")
+    print("✅ Vehículo encontrado:" if vehiculo_encontrado else "❌ Vehículo no encontrado.")
+    vehiculo_no_encontrado = vehicle_controller.get_vehicle("ZZZ-999")
+    print(
+        "❌ Vehículo encontrado (debería fallar)." if vehiculo_no_encontrado else "✅ Vehículo no encontrado como se esperaba.")
+    servicio_encontrado = service_controller.get_service("Mantenimiento", "2025-11-05 00:00:00")
+    print("✅ Servicio encontrado:" if servicio_encontrado else "❌ Servicio no encontrado.")
+    servicio_no_encontrado = service_controller.get_service("Reparación", "2025-11-05 00:00:00")
+    print(
+        "❌ Servicio encontrado (debería fallar)." if servicio_no_encontrado else "✅ Servicio no encontrado como se esperaba.")
+
+    print("\n================ PRUEBAS DE ELIMINACIÓN ================")
+    try:
+        client_controller.delete_client("123455")
+        print("✅ Cliente eliminado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al eliminar cliente válido: {e}")
+    try:
+        client_controller.delete_client("99999")
+        print("❌ Cliente inexistente eliminado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado al eliminar cliente inexistente: {e}")
+    try:
+        vehicle_controller.delete_vehicle("ABC-123")
+        print("✅ Vehículo eliminado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al eliminar vehículo válido: {e}")
+    try:
+        vehicle_controller.delete_vehicle("ZZZ-999")
+        print("❌ Vehículo inexistente eliminado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado al eliminar vehículo inexistente: {e}")
+    try:
+        service_controller.delete_service("Mantenimiento", "2025-11-05 00:00:00")
+        print("✅ Servicio eliminado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al eliminar servicio válido: {e}")
+    try:
+        service_controller.delete_service("Reparación", "2025-11-05 00:00:00")
+        print("❌ Servicio inexistente eliminado (debería fallar).")
+    except Exception as e:
+        print(f"✅ Error esperado al eliminar servicio inexistente: {e}")
+
+    print("\n================ PRUEBA DE INSERCIÓN ORDENADA ================")
+    # Se insertan varios clientes y se imprime el orden
+    nombres = ["Carlos", "Beatriz", "Andrés", "Diana"]
+    for nombre in nombres:
+        try:
+            client_controller.add_client(Client(nombre, nombre + "_doc", "3000000000", nombre + "@mail.com", "Calle X"))
+        except Exception:
+            pass
+    print("Clientes ordenados por nombre:")
+    for cliente in clients:
+        print(cliente.name)
+
+    print("\n================ PRUEBA DE GENERACIÓN DE ARCHIVO DE CLIENTES ================")
+    try:
+        client_controller.to_file("another_output.txt")
+        print("✅ Archivo de clientes generado correctamente.")
+    except Exception as e:
+        print(f"❌ Error al generar archivo de clientes: {e}")
+
     print("\n=== ✅ FIN DE CASOS DE PRUEBA ===\n")

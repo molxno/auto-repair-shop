@@ -41,13 +41,10 @@ class ServiceController(Controller):
     def add_service(self, service):
         """
         Agrega un nuevo servicio, validando que el precio sea positivo.
-        Entradas: service (objeto Service)
-        Salidas: bool (True si se agregó, False si el precio es inválido)
-        Pertinencia: Permite registrar servicios realizados, asegurando la validez de los datos.
+        Si el precio es inválido, lanza excepción.
         """
         if service.price <= 0:
-            print(f"❌ No se puede registrar servicio con costo negativo: {service.price}")
-            return False
+            raise Exception(f"El costo del servicio debe ser positivo: {service.price}")
         self._insert_ordered_desc(service)
         return True
 
@@ -81,10 +78,10 @@ class ServiceController(Controller):
 
     def delete_service(self, type_service, date):
         """
-        Elimina un servicio basado en tipo y fecha.
-        Entradas: type_service (str), date (date)
-        Salidas: bool (True si se eliminó, False si no existe)
-        Pertinencia: Permite mantener la integridad de la lista eliminando servicios que ya no son necesarios.
+        Elimina un servicio basado en tipo y fecha. Si no existe, lanza una excepción.
         """
         key = f"{type_service}-{date}"
-        return self.delete(key)
+        result = self.delete(key)
+        if not result:
+            raise Exception(f"❌ No existe servicio {type_service} en fecha {date}")
+        return result
