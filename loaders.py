@@ -9,7 +9,12 @@ from datetime import datetime
 
 
 def cargar_clientes(controller: ClientController, file_name: str):
-    """Carga los clientes desde un CSV."""
+    """
+    Carga los clientes desde un archivo CSV y los agrega a la lista doble gestionada por el controlador.
+    Entradas: controller (ClientController), file_name (str, ruta del archivo CSV)
+    Salidas: Ninguna (los clientes se agregan al controlador, imprime mensajes de éxito o error)
+    Pertinencia: Permite la carga masiva y automatizada de clientes, facilitando la gestión y validación de datos en el sistema.
+    """
     try:
         with open(file_name, "r", encoding="utf-8") as file:
             next(file)  # saltar encabezado
@@ -28,7 +33,12 @@ def cargar_clientes(controller: ClientController, file_name: str):
 
 
 def cargar_vehiculos(controller: VehicleController, client_controller: ClientController, file_name: str):
-    """Carga los vehículos desde un CSV y los asocia a clientes existentes."""
+    """
+    Carga los vehículos desde un archivo CSV, los asocia a clientes existentes y los agrega a la lista doble gestionada por el controlador.
+    Entradas: controller (VehicleController), client_controller (ClientController), file_name (str, ruta del archivo CSV)
+    Salidas: Ninguna (los vehículos se agregan al controlador y al cliente, imprime mensajes de éxito o error)
+    Pertinencia: Permite la carga masiva y automatizada de vehículos, asegurando la relación con clientes y la validación de datos.
+    """
     try:
         with open(file_name, "r", encoding="utf-8") as file:
             next(file)
@@ -53,7 +63,12 @@ def cargar_vehiculos(controller: VehicleController, client_controller: ClientCon
 
 
 def cargar_servicios(controller: ServiceController, vehicle_controller: VehicleController, file_name: str):
-    """Carga los servicios desde un CSV y los asocia a los vehículos."""
+    """
+    Carga los servicios desde un archivo CSV, los asocia a los vehículos y los agrega a la lista doble gestionada por el controlador.
+    Entradas: controller (ServiceController), vehicle_controller (VehicleController), file_name (str, ruta del archivo CSV)
+    Salidas: Ninguna (los servicios se agregan al controlador y al vehículo, imprime mensajes de éxito o error)
+    Pertinencia: Permite la carga masiva y automatizada de servicios, facilitando la gestión y validación de mantenimientos en el sistema.
+    """
     try:
         with open(file_name, "r", encoding="utf-8") as file:
             next(file)

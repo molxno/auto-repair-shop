@@ -1,4 +1,12 @@
 # =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
 # Archivo: tests/test_services.py
 # Descripción: Pruebas unitarias para la gestión de servicios
 # =============================================================
@@ -8,6 +16,12 @@ from datetime import datetime
 
 
 def test_services():
+    """
+    Prueba la gestión de servicios: inserción, validación de precio, búsqueda y eliminación.
+    Entradas: Ninguna
+    Salidas: Imprime resultados de cada caso de prueba (éxito o error esperado)
+    Pertinencia: Permite validar que el sistema gestiona correctamente los servicios y aplica restricciones de precio y existencia.
+    """
     print("\n================ PRUEBAS DE SERVICIOS ================")
     service_controller = ServiceController()
 

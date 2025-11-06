@@ -1,4 +1,12 @@
 # =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
 # Archivo: tests/test_vehicles.py
 # Descripción: Pruebas unitarias para la gestión de vehículos
 # =============================================================
@@ -9,6 +17,12 @@ from models.vehicle import Vehicle
 
 
 def test_vehicles():
+    """
+    Prueba la gestión de vehículos: inserción, validación de formato de placa, asociación a cliente y eliminación.
+    Entradas: Ninguna
+    Salidas: Imprime resultados de cada caso de prueba (éxito o error esperado)
+    Pertinencia: Permite validar que el sistema gestiona correctamente los vehículos y aplica restricciones de formato y asociación.
+    """
     print("\n================ PRUEBAS DE VEHÍCULOS ================")
     vehicle_controller = VehicleController()
     client_controller = ClientController()

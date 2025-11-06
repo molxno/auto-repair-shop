@@ -79,6 +79,9 @@ class ServiceController(Controller):
     def delete_service(self, type_service, date):
         """
         Elimina un servicio basado en tipo y fecha. Si no existe, lanza una excepción.
+        Entradas: type_service (str, tipo de servicio), date (date, fecha del servicio)
+        Salidas: bool (True si se eliminó, lanza excepción si no existe)
+        Pertinencia: Permite mantener la integridad del sistema eliminando servicios específicos según criterios relevantes.
         """
         key = f"{type_service}-{date}"
         result = self.delete(key)

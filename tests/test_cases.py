@@ -1,4 +1,12 @@
 # =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
 # Archivo: tests/test_cases.py
 # Descripción: Casos de prueba automatizados para validar las funcionalidades
 # =============================================================
@@ -8,6 +16,12 @@ from datetime import datetime
 
 
 def test_vehicle_without_client():
+    """
+    Prueba la restricción de no permitir vehículos sin cliente asociado.
+    Entradas: Ninguna
+    Salidas: Imprime resultado del caso de prueba (éxito o error esperado)
+    Pertinencia: Valida que el sistema no permita registros inválidos de vehículos.
+    """
     print("🔹 Caso 1: Vehículo sin cliente asociado")
     try:
         Vehicle(None, "XYZ-789", "Mazda", "CX-5", 2022)
@@ -17,6 +31,12 @@ def test_vehicle_without_client():
 
 
 def test_delete_client_with_active_services(clients):
+    """
+    Prueba la restricción de no permitir eliminar clientes con servicios activos.
+    Entradas: clients (ClientController)
+    Salidas: Imprime resultado del caso de prueba (éxito o error esperado)
+    Pertinencia: Valida que el sistema preserve la integridad de los datos y las relaciones.
+    """
     print("\n🔹 Caso 2: Eliminar cliente con servicios activos")
     try:
         first_client = clients.first()
@@ -32,6 +52,12 @@ def test_delete_client_with_active_services(clients):
 
 
 def test_invalid_plate_format(clients):
+    """
+    Prueba la restricción de formato de placa inválido en vehículos.
+    Entradas: clients (ClientController)
+    Salidas: Imprime resultado del caso de prueba (éxito o error esperado)
+    Pertinencia: Valida que el sistema rechace placas con formato incorrecto.
+    """
     print("\n🔹 Caso 3: Formato inválido de placa")
     try:
         bad_plate = Vehicle(None, "12-ABC", "Toyota", "Corolla", 2023)
@@ -43,6 +69,12 @@ def test_invalid_plate_format(clients):
 
 
 def test_negative_service_cost(clients):
+    """
+    Prueba la restricción de no permitir servicios con costo negativo.
+    Entradas: clients (ClientController)
+    Salidas: Imprime resultado del caso de prueba (éxito o error esperado)
+    Pertinencia: Valida que el sistema rechace servicios con valores inválidos.
+    """
     print("\n🔹 Caso 4: Servicio con costo negativo")
     try:
         bad_service = Service("Cambio de aceite", -50000, datetime.now().date(), "Error de costo")

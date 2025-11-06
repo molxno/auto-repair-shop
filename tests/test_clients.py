@@ -1,4 +1,12 @@
 # =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
 # Archivo: tests/test_clients.py
 # Descripción: Pruebas unitarias para la gestión de clientes
 # =============================================================
@@ -7,6 +15,12 @@ from models.client import Client
 
 
 def test_clients():
+    """
+    Prueba la gestión de clientes: inserción, búsqueda, eliminación y validación de duplicados.
+    Entradas: Ninguna
+    Salidas: Imprime resultados de cada caso de prueba (éxito o error esperado)
+    Pertinencia: Permite validar que el sistema gestiona correctamente los clientes y aplica restricciones como unicidad y existencia.
+    """
     print("\n================ PRUEBAS DE CLIENTES ================")
     client_controller = ClientController()
 

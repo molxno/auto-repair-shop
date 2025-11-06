@@ -56,7 +56,9 @@ class VehicleController(Controller):
     def add_vehicle(self, vehicle: Vehicle, client_controller):
         """
         Agrega un vehículo nuevo, validando cliente y formato de placa.
-        Si hay error de formato o cliente, lanza excepción.
+        Entradas: vehicle (objeto Vehicle), client_controller (ClientController)
+        Salidas: bool (True si se agregó, lanza excepción si hay error de formato o cliente)
+        Pertinencia: Permite registrar vehículos en el sistema, asegurando que estén correctamente asociados y con formato válido.
         """
         if not self.__validate_plate(vehicle.plate):
             raise Exception(f"❌ Formato de placa inválido: {vehicle.plate}")
@@ -80,12 +82,22 @@ class VehicleController(Controller):
         return False
 
     def get_vehicle(self, plate):
-        """Obtiene el objeto Vehicle completo."""
+        """
+        Obtiene el objeto Vehicle completo a partir de la placa.
+        Entradas: plate (str, placa del vehículo)
+        Salidas: objeto Vehicle o None
+        Pertinencia: Permite acceder a la información completa de un vehículo para operaciones o reportes.
+        """
         node = self.get(plate)
         return node.data if node else None
 
     def delete_vehicle(self, plate):
-        """Elimina un vehículo según su placa. Si no existe, lanza una excepción."""
+        """
+        Elimina un vehículo según su placa. Si no existe, lanza una excepción.
+        Entradas: plate (str, placa del vehículo)
+        Salidas: bool (True si se eliminó, lanza excepción si no existe)
+        Pertinencia: Permite mantener la integridad del sistema eliminando vehículos que ya no son necesarios.
+        """
         result = self.delete(plate)
         if not result:
             raise Exception(f"❌ No existe vehículo con placa {plate}")

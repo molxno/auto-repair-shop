@@ -10,7 +10,6 @@
 # Archivo: service.py
 # Descripción: Modelo para representar un servicio realizado.
 # =============================================================
-
 class Service:
     """
     Modelo para representar un servicio realizado a un vehículo.
