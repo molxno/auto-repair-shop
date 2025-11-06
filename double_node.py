@@ -1,3 +1,15 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: double_node.py
+# Descripción: Nodo para una lista doblemente enlazada.
+# =============================================================
 class DoubleNode:
     """Nodo para una lista doblemente enlazada."""
 

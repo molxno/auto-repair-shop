@@ -1,3 +1,15 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: client_controller.py
+# Descripción: Controlador para gestionar clientes y sus vehículos.
+# =============================================================
 from controllers.controller import Controller
 from models.client import Client
 

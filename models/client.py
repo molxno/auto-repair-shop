@@ -1,3 +1,15 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: client.py
+# Descripción: Modelo para representar un cliente.
+# =============================================================
 from double_list import DoubleList
 from models.person import Person
 

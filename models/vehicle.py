@@ -1,3 +1,15 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: vehicle.py
+# Descripción: Modelo para representar un vehículo.
+# =============================================================
 from double_list import DoubleList
 import re
 

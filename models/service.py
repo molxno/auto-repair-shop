@@ -1,3 +1,16 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: service.py
+# Descripción: Modelo para representar un servicio realizado.
+# =============================================================
+
 class Service:
     def __init__(self, type_service, price, date, description):
         if price <= 0:

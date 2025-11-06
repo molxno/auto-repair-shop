@@ -1,3 +1,15 @@
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: controller.py
+# Descripción: Clase base abstracta para controladores de listas dobles.
+# =============================================================
 from abc import ABC, abstractmethod
 from double_list import DoubleList
 
