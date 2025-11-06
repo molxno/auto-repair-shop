@@ -20,6 +20,11 @@ if __name__ == "__main__":
     cargar_vehiculos(vehicles, clients, "data/vehicles.csv")
     cargar_servicios(services, vehicles, "data/services.csv")
 
+    print("\n=== 🧪 GENERACIÓN DE ARCHIVO ===\n")
+
+    # Generación de reporte
+    clients.to_file("output.txt")
+
     print("\n=== 🧪 EJECUTANDO CASOS DE PRUEBA ===\n")
 
     # Ejecutar pruebas

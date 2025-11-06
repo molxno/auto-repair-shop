@@ -58,11 +58,3 @@ def test_clients():
     print("Clientes ordenados por nombre:")
     for cliente in client_controller:
         print(cliente.name)
-
-    # Generación de archivo
-    print("\n💾 PRUEBA DE GENERACIÓN DE ARCHIVO")
-    try:
-        client_controller.to_file("another_output.txt")
-        print("✅ Archivo de clientes generado correctamente.")
-    except Exception as e:
-        print(f"❌ Error al generar archivo de clientes: {e}")

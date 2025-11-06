@@ -4,7 +4,7 @@ Cliente: Alejandro Gil
 Vehículos: 1
 Promedio de servicios: $45,000
 
-Cliente: Andrés Ruiz
+Cliente: Belisario Holguin
 Vehículos: 1
 Promedio de servicios: $180,000
 
