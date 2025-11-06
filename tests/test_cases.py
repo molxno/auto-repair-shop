@@ -12,7 +12,7 @@
 # =============================================================
 from models.vehicle import Vehicle
 from models.service import Service
-from datetime import datetime
+from datetime import date
 
 
 def test_vehicle_without_client():
@@ -77,7 +77,7 @@ def test_negative_service_cost(clients):
     """
     print("\n🔹 Caso 4: Servicio con costo negativo")
     try:
-        bad_service = Service("Cambio de aceite", -50000, datetime.now().date(), "Error de costo")
+        bad_service = Service("Cambio de aceite", -50000, date.today(), "Error de costo")
         first_client = clients.first()
         first_vehicle = first_client.vehicles.first().data
         first_vehicle.add_service(bad_service)
