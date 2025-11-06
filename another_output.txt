@@ -1,6 +1,6 @@
 === Reporte de Taller Mecánico ===
 
-Cliente: Andrés
+Cliente: Alejandro
 Vehículos: 0
 Promedio de servicios: $0
 
@@ -8,19 +8,7 @@ Cliente: Beatriz
 Vehículos: 0
 Promedio de servicios: $0
 
-Cliente: Carlos
-Vehículos: 0
-Promedio de servicios: $0
-
-Cliente: Diana
-Vehículos: 0
-Promedio de servicios: $0
-
-Cliente: Isabella Diaz
-Vehículos: 0
-Promedio de servicios: $0
-
-Cliente: Miguel Gomez
+Cliente: Zacarías
 Vehículos: 0
 Promedio de servicios: $0
 
