@@ -15,22 +15,45 @@ from models.client import Client
 
 
 class ClientController(Controller):
-    """Controlador para gestionar clientes y sus vehículos."""
+    """
+    Controlador para gestionar clientes y sus vehículos.
+    Permite administrar la lista de clientes y sus vehículos asociados, realizando operaciones de inserción, búsqueda y eliminación.
+    """
 
     def get_key(self, client: Client):
-        """La clave para buscar clientes es su documento."""
+        """
+        Obtiene la clave única de un cliente (documento).
+        Entradas: client (objeto Client)
+        Salidas: str (documento del cliente)
+        Pertinencia: Permite identificar y buscar clientes de forma única en la lista.
+        """
         return client.document
 
     def order_key(self, client: Client):
-        """Orden alfabético por nombre."""
+        """
+        Obtiene la clave de ordenamiento para un cliente (nombre en minúsculas).
+        Entradas: client (objeto Client)
+        Salidas: str (nombre del cliente en minúsculas)
+        Pertinencia: Permite mantener la lista de clientes ordenada alfabéticamente.
+        """
         return client.name.lower()
 
     def add_client(self, client: Client):
-        """Agrega un cliente nuevo a la lista."""
+        """
+        Agrega un cliente nuevo a la lista de clientes.
+        Entradas: client (objeto Client)
+        Salidas: Ninguna
+        Pertinencia: Permite registrar nuevos clientes en el sistema.
+        """
         self.add(client)
 
     def add_vehicle_to_client(self, document, vehicle):
-        """Agrega un vehículo a un cliente existente."""
+        """
+        Agrega un vehículo a un cliente existente.
+        Entradas: document (str, documento del cliente), vehicle (objeto Vehicle)
+        Salidas: bool (True si se agregó, False si no se encontró el cliente)
+        Pertinencia: Permite asociar vehículos a clientes registrados, cumpliendo la relación entre objetos.
+        """
         node = self.get(document)
         if node:
             node.data.add_vehicle(vehicle)
@@ -38,12 +61,22 @@ class ClientController(Controller):
         return False
 
     def get_client(self, document):
-        """Obtiene el objeto Client completo."""
+        """
+        Obtiene el objeto Client completo a partir de su documento.
+        Entradas: document (str, documento del cliente)
+        Salidas: objeto Client o None
+        Pertinencia: Permite acceder a la información completa de un cliente para operaciones o reportes.
+        """
         node = self.get(document)
         return node.data if node else None
 
     def delete_client(self, document):
-        """Elimina un cliente solo si no tiene servicios activos."""
+        """
+        Elimina un cliente solo si no tiene servicios activos en sus vehículos.
+        Entradas: document (str, documento del cliente)
+        Salidas: bool (True si se eliminó, False si tiene servicios activos o no existe)
+        Pertinencia: Permite mantener la integridad del sistema evitando eliminar clientes con servicios pendientes.
+        """
         node = self.get(document)
         if not node:
             return False
@@ -65,6 +98,9 @@ class ClientController(Controller):
         Genera un archivo de texto con la información de los clientes,
         mostrando el número total de vehículos y el promedio de costo
         de los servicios de todos sus vehículos.
+        Entradas: file_name (str, nombre del archivo de salida)
+        Salidas: Ninguna (genera archivo)
+        Pertinencia: Permite exportar la información de los clientes para reportes o respaldo.
         """
         try:
             with open(file_name, "w", encoding="utf-8") as file:
