@@ -100,9 +100,9 @@ def test_services_sorted_desc(services):
         correctly_sorted = True
         for service in services:
             print(service)
-            if last_date and service.date > last_date:
+            if last_date and service.appointment > last_date:
                 correctly_sorted = False
-            last_date = service.date
+            last_date = service.appointment
         print("✅ Correcto: Servicios en orden descendente por fecha."
               if correctly_sorted else "❌ ERROR: Servicios no están ordenados correctamente.")
     else:

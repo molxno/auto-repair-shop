@@ -12,6 +12,7 @@
 # =============================================================
 from double_list import DoubleList
 import re
+from models.client import Client
 
 
 class Vehicle:
@@ -20,7 +21,7 @@ class Vehicle:
     Permite almacenar información relevante sobre el propietario, placa, marca, modelo, año y servicios realizados.
     """
 
-    def __init__(self, client, plate, brand, model, year):
+    def __init__(self, client: Client, plate: str, brand: str, model: str, year: int):
         """
         Inicializa un vehículo con cliente, placa, marca, modelo, año y lista de servicios.
         Entradas: client (objeto Client), plate (str), brand (str), model (str), year (int)

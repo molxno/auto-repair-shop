@@ -27,7 +27,7 @@ class ServiceController(Controller):
         Salidas: str (combinación tipo-fecha)
         Pertinencia: Permite identificar y buscar servicios de forma única en la lista.
         """
-        return f"{service.type_service}-{service.date}"
+        return f"{service.type_service}-{service.appointment}"
 
     def order_key(self, service: Service):
         """
@@ -36,7 +36,7 @@ class ServiceController(Controller):
         Salidas: date (fecha del servicio)
         Pertinencia: Permite mantener la lista de servicios ordenada por fecha.
         """
-        return service.date
+        return service.appointment
 
     def add_service(self, service):
         """

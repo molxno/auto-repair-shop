@@ -20,16 +20,16 @@ class Client(Person):
     Hereda de Person y agrega información de contacto y vehículos asociados.
     """
 
-    def __init__(self, name, document, phone, email, address):
+    def __init__(self, name: str, document: int, phone: int, email: str, address: str):
         """
         Inicializa un cliente con sus datos personales, correo, dirección y lista de vehículos.
-        Entradas: name (str), document (str), phone (str), email (str), address (str)
+        Entradas: name (str), document (int), phone (int), email (str), address (str)
         Salidas: Ninguna
         Pertinencia: Permite crear objetos cliente completos para ser gestionados en la lista doble.
         """
         super().__init__(name, document, phone)
-        self.__email = email
-        self.__address = address
+        self.__email: str = email
+        self.__address: str = address
         self.__vehicles = DoubleList()
 
     @property

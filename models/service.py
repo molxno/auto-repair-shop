@@ -10,13 +10,16 @@
 # Archivo: service.py
 # Descripción: Modelo para representar un servicio realizado.
 # =============================================================
+from datetime import date
+
+
 class Service:
     """
     Modelo para representar un servicio realizado a un vehículo.
     Permite almacenar información relevante sobre el tipo, precio, fecha y descripción del servicio.
     """
 
-    def __init__(self, type_service, price, date, description):
+    def __init__(self, type_service: str, price: float, appointment: date, description: str):
         """
         Inicializa un servicio con tipo, precio, fecha y descripción.
         Entradas: type_service (str), price (float), date (date), description (str)
@@ -28,7 +31,7 @@ class Service:
 
         self.__type_service = type_service
         self.__price = price
-        self.__date = date
+        self.__appointment = appointment
         self.__description = description
 
     @property
@@ -72,24 +75,24 @@ class Service:
         self.__price = value
 
     @property
-    def date(self):
+    def appointment(self):
         """
         Obtiene la fecha en que se realizó el servicio.
         Entradas: Ninguna
         Salidas: date (fecha)
         Pertinencia: Permite acceder a la fecha para ordenamiento y reportes.
         """
-        return self.__date
+        return self.__appointment
 
-    @date.setter
-    def date(self, value):
+    @appointment.setter
+    def appointment(self, value):
         """
         Establece la fecha del servicio.
         Entradas: value (date)
         Salidas: Ninguna
         Pertinencia: Permite modificar la fecha registrada del servicio.
         """
-        self.__date = value
+        self.__appointment = value
 
     @property
     def description(self):
@@ -118,4 +121,4 @@ class Service:
         Salidas: str (información resumida del servicio)
         Pertinencia: Facilita la visualización y exportación de datos del servicio.
         """
-        return f"{self.__type_service} - ${self.__price:.2f} ({self.__date})"
+        return f"{self.__type_service} - ${self.__price:.2f} ({self.__appointment})"

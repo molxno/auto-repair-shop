@@ -16,16 +16,16 @@ class Person:
     Permite almacenar información básica de identificación y contacto.
     """
 
-    def __init__(self, name, document, phone):
+    def __init__(self, name: str, document: int, phone: int):
         """
         Inicializa una persona con nombre, documento y teléfono.
-        Entradas: name (str), document (str), phone (str)
+        Entradas: name (str), document (int), phone (int)
         Salidas: Ninguna
         Pertinencia: Permite crear objetos base para clientes y otras entidades relacionadas.
         """
-        self.__name = name
-        self.__document = document
-        self.__phone = phone
+        self.__name: str = name
+        self.__document: int = document
+        self.__phone: int = phone
 
     @property
     def name(self):
