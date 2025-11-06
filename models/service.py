@@ -1,5 +1,8 @@
 class Service:
     def __init__(self, type_service, price, date, description):
+        if price <= 0:
+            raise ValueError(f"El costo del servicio debe ser positivo: {price}")
+
         self.__type_service = type_service
         self.__price = price
         self.__date = date
@@ -19,8 +22,6 @@ class Service:
 
     @price.setter
     def price(self, value):
-        if value <= 0:
-            raise ValueError("El costo debe ser positivo.")
         self.__price = value
 
     @property

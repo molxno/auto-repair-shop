@@ -3,7 +3,13 @@ import re
 
 
 class Vehicle:
-    def __init__(self, plate, brand, model, year):
+    def __init__(self, client, plate, brand, model, year):
+        if not re.match(r"^[A-Z]{3}-\d{3}$", plate.upper()):
+            raise ValueError(f"Formato de placa inválido: {plate}")
+        if client is None:
+            raise ValueError("El vehículo debe estar asociado a un cliente.")
+
+        self.__client = client
         self.__plate = plate
         self.__brand = brand
         self.__model = model
@@ -11,13 +17,19 @@ class Vehicle:
         self.__services = DoubleList()
 
     @property
+    def client(self):
+        return self.__client
+
+    @client.setter
+    def client(self, value):
+        self.__client = value
+
+    @property
     def plate(self):
         return self.__plate
 
     @plate.setter
     def plate(self, value):
-        if not re.match(r'^[A-Z]{3}-\d{3}$', value):
-            raise ValueError("Formato de placa inválido (ejemplo: ABC-123)")
         self.__plate = value
 
     @property

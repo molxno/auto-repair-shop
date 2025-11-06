@@ -1,0 +1,82 @@
+=== Reporte de Taller Mecánico ===
+
+Cliente: Alejandro Gil
+Vehículos: 1
+Promedio de servicios: $45,000
+
+Cliente: Andrés Ruiz
+Vehículos: 1
+Promedio de servicios: $180,000
+
+Cliente: Camila Ríos
+Vehículos: 1
+Promedio de servicios: $200,000
+
+Cliente: Carlos Gómez
+Vehículos: 1
+Promedio de servicios: $40,000
+
+Cliente: Daniela Ortiz
+Vehículos: 1
+Promedio de servicios: $70,000
+
+Cliente: David Castro
+Vehículos: 1
+Promedio de servicios: $480,000
+
+Cliente: Esteban Soto
+Vehículos: 1
+Promedio de servicios: $320,000
+
+Cliente: Felipe Cano
+Vehículos: 1
+Promedio de servicios: $95,000
+
+Cliente: Gabriela Silva
+Vehículos: 1
+Promedio de servicios: $150,000
+
+Cliente: Isabela Navarro
+Vehículos: 1
+Promedio de servicios: $145,000
+
+Cliente: Juan Pérez
+Vehículos: 1
+Promedio de servicios: $150,000
+
+Cliente: Julián Vargas
+Vehículos: 1
+Promedio de servicios: $190,000
+
+Cliente: Kevin Romero
+Vehículos: 1
+Promedio de servicios: $120,000
+
+Cliente: Laura Torres
+Vehículos: 1
+Promedio de servicios: $220,000
+
+Cliente: María López
+Vehículos: 1
+Promedio de servicios: $90,000
+
+Cliente: Mónica Rincón
+Vehículos: 1
+Promedio de servicios: $155,000
+
+Cliente: Paola Hernández
+Vehículos: 1
+Promedio de servicios: $130,000
+
+Cliente: Santiago Mora
+Vehículos: 1
+Promedio de servicios: $140,000
+
+Cliente: Tatiana León
+Vehículos: 1
+Promedio de servicios: $35,000
+
+Cliente: Valentina Díaz
+Vehículos: 1
+Promedio de servicios: $350,000
+

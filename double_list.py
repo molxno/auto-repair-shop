@@ -15,6 +15,12 @@ class DoubleList:
     def is_empty(self):
         return len(self) == 0
 
+    def first(self):
+        return self.__head
+
+    def last(self):
+        return self.__tail
+
     def add_first(self, data):
         node = DoubleNode(data)
         if self.is_empty():

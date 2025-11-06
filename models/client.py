@@ -33,4 +33,4 @@ class Client(Person):
         self.__vehicles.add_first(vehicle)
 
     def __str__(self):
-        return f"{self.name} - {self.email} ({self.document})"
+        return f"Cliente: {self.name} | Correo: {self.email} | Documento: {self.document}"

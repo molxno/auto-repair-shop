@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76961f9d-e355-4133-bb25-98ae91c3f019" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/service_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/vehicle_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/client_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/double_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/double_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/vehicle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
