@@ -119,3 +119,7 @@ class Controller(ABC):
         while current:
             yield current.data
             current = current.next
+
+    def __iter__(self):
+        """Permite iterar directamente sobre el controlador con 'for ... in ...'."""
+        return self.iterate()

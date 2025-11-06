@@ -154,8 +154,7 @@ if __name__ == "__main__":
         last_date = None
         correctly_sorted = True
 
-        # ahora recorres los servicios directamente como objetos
-        for service in services.iterate():
+        for service in services:
             print(service)
             if last_date and service.date > last_date:
                 correctly_sorted = False
