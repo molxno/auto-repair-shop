@@ -2,7 +2,6 @@
 # Archivo: tests/test_cases.py
 # Descripción: Casos de prueba automatizados para validar las funcionalidades
 # =============================================================
-from models.client import Client
 from models.vehicle import Vehicle
 from models.service import Service
 from datetime import datetime

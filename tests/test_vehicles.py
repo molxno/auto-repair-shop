@@ -12,11 +12,10 @@ def test_vehicles():
     print("\n================ PRUEBAS DE VEHÍCULOS ================")
     vehicle_controller = VehicleController()
     client_controller = ClientController()
+    cliente = Client("Isabella Diaz", "1025646344", "3206686822", "isa_diaza@gmail.com", "Carrera 56 #43-12")
+    client_controller.add_client(cliente)
 
     try:
-        cliente = Client("Isabella Diaz", "1025646344", "3206686822", "isa_diaza@gmail.com", "Carrera 56 #43-12")
-        client_controller.add_client(cliente)
-
         vehiculo_valido = Vehicle(cliente, "ABC-123", "Toyota", "Corolla", 2020)
         vehicle_controller.add_vehicle(vehiculo_valido, client_controller)
         print("✅ Vehículo insertado correctamente.")

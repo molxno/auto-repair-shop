@@ -53,8 +53,8 @@ def test_clients():
         client_controller.add_client(Client("Zacarías", "zac_doc", "3001111111", "zac@mail.com", "Calle 3"))
         client_controller.add_client(Client("Alejandro", "ale_doc", "3002222222", "ale@mail.com", "Calle 4"))
         client_controller.add_client(Client("Beatriz", "bea_doc", "3003333333", "bea@mail.com", "Calle 5"))
-    except Exception:
-        pass
+    except Exception as e:
+        raise AssertionError(f"Error al insertar clientes ordenados: {e}") from e
     print("Clientes ordenados por nombre:")
     for cliente in client_controller:
         print(cliente.name)
