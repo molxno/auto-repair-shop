@@ -1,4 +1,15 @@
-# loaders.py
+# =============================================================
+# Momento Evaluativo 4 - Estructura de Datos y Laboratorio
+#
+# Integrantes:
+#   - Santiago Molano Holguín
+#   - Samuel Olaya Olaya
+#   - Kevin Álvarez Blandon
+#
+# Docente: Ricardo Franco Ceballos - ITM
+# Archivo: loaders.py
+# Descripción: Cargador de datos desde archivos CSV.
+# =============================================================
 from controllers.client_controller import ClientController
 from controllers.vehicle_controller import VehicleController
 from controllers.service_controller import ServiceController
